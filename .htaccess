@@ -7,7 +7,7 @@ RewriteEngine On
 
 #2 parameter
   RewriteRule   ^wa/proses/?$			    index.php?page=vwaproses
-  RewriteRule   ^wa/order-link/?(.*)$	index.php?page=vwaorderlink&username=$1
+  RewriteRule   ^wa/username/?(.*)$	  index.php?page=vwaorderlink&username=$1
 
 
   #RewriteRule   ^wa/(.+)$			        index.php?page=vwa&username=$1
