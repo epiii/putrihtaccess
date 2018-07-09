@@ -1,0 +1,38 @@
+#php_flag display_errors off
+
+RewriteEngine On
+ErrorDocument 404 sorry-page-doesnt-exist
+
+#front-end -
+	RewriteRule   ^home/?$   									index.php?menu=vhome
+	RewriteRule   ^member/?$   									index.php?menu=vmember
+	RewriteRule   ^about-us/?$   									index.php?menu=vabout
+	RewriteRule   ^cara-donasi/?$   								index.php?menu=vcdonasi
+	RewriteRule   ^konfirmasi/(.*)$		 							index.php?menu=vkonfirmasi&acak=$1
+
+
+# Send all blocked request to homepage with 403 Forbidden error!
+#RewriteRule ^(.*)$ index.php [F,L]
+
+
+
+#RewriteRule ^index\.php$ - [L]
+#RewriteRule ^([^/]+)/?$ /index.php?page=$1 [L,QSA]
+#RewriteRule ^([a-z]{2})/([^/]+)/?$ /index.php?page=$2&lang=$1 [L,QSA]
+#RewriteRule ^([a-z]{2})/([^/]+)/([0-9]+)/?$ /index.php?page=$2&lang=$1&article=$3 [L,QSA]
+#RewriteRule ^([^/]+)/([0-9]+)/?$ /index.php?page=$1&article=$2 [L,QSA]
+
+
+#output
+  #http://example.com/profile/myname
+  #http://example.com/page/search
+  #http://example.com/page/stats/daily
+
+  #RewriteCond %{REQUEST_FILENAME} !-f
+  #RewriteCond %{REQUEST_FILENAME} !-d
+  #RewriteRule ^([^/]+)/([^/]+)$ index.php?page=$1&username=$2 [L,QSA]
+  #RewriteRule ^([^/]+)/([^/]+)$ index.php?page=$1&username=$2 [L]
+
+  #RewriteCond %{REQUEST_FILENAME} !-f
+  #RewriteCond %{REQUEST_FILENAME} !-d
+  #RewriteRule ^([^/]+)$ index.php?page=$1 [L]

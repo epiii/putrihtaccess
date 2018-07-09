@@ -1,0 +1,13 @@
+RewriteEngine On
+
+#1 parameter
+  RewriteRule   ^home/?$			  index.php?page=vhome
+  RewriteRule   ^about-us/?$	  index.php?page=vaboutus
+  RewriteRule   ^wa/?$          index.php?page=vwaform
+
+#2 parameter
+  RewriteRule   ^wa/proses/?$			    index.php?page=vwaproses
+  RewriteRule   ^wa/order-link/?(.*)$	index.php?page=vwaorderlink&username=$1
+
+
+  #RewriteRule   ^wa/(.+)$			        index.php?page=vwa&username=$1
